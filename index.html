@@ -195,4 +195,7 @@
         rain.appendChild(d);
       }
     }
-    function sendMsg(){const n=document.getElementById('cfName').value,e=document.getElementB
+    function sendMsg(){const n=document.getElementById('cfName').value,e=document.getElementById('cfEmail').value,s=document.getElementById('cfSubject').value,msg=document.getElementById('cfMsg').value;if(n&&e&&s&&msg){document.getElementById('contactForm').style.display='none';document.getElementById('formDone').style.display='flex';setTimeout(()=>{document.getElementById('contactForm').style.display='block';document.getElementById('formDone').style.display='none';document.getElementById('cfName').value='';document.getElementById('cfEmail').value='';document.getElementById('cfSubject').value='';document.getElementById('cfMsg').value='';},3000);}else{alert('Please fill in all fields');}}
+  </script>
+</body>
+</html>
