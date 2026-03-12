@@ -21,7 +21,7 @@
   --text-2: rgba(255,255,255,0.78);
   --text-3: rgba(255,255,255,0.45);
 
-  --ff-main: 'Outfit', sans-serif;
+  --ff-main: 'Syne', sans-serif;
   --ff-mono: 'JetBrains Mono', monospace;
   --nav-h: 70px;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,22 +38,19 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   /* Cherry Blossom Night background */
-  background-image: url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=1920&q=85');
+  background-image: url('../assets/images/bg.jpg');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
-  background-color: #010d18;
+  background-color: #1a0020;
 }
 /* Dark + pink-purple tinted overlay for cherry blossom mood */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: -1;
-  background: linear-gradient(
-    160deg,
-    rgba(0, 8, 30, 0.75) 0%,
-    rgba(0, 25, 50, 0.55) 45%,
-    rgba(5, 2, 20, 0.72) 100%
-  );
+  background: rgba(0, 5, 20, 0.82);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   pointer-events: none;
 }
 
@@ -518,9 +515,9 @@ img { max-width: 100%; display: block; }
 .resume-col { display: flex; flex-direction: column; gap: 2.5rem; }
 
 .resume-block {
-  background: var(--glass);
-  backdrop-filter: blur(24px) saturate(2);
-  -webkit-backdrop-filter: blur(24px) saturate(2);
+  background: rgba(0,10,30,0.55);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
@@ -555,7 +552,7 @@ img { max-width: 100%; display: block; }
 
 /* Tech stack pills */
 .tech-stack-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
-.tech-pill { font-family: var(--ff-mono); font-size: .72rem; padding: .4rem .9rem; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); color: var(--text-2); transition: all .22s; backdrop-filter: blur(12px); }
+.tech-pill { font-family: var(--ff-mono); font-size: .72rem; padding: .4rem .9rem; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); color: var(--text-2); transition: all .22s; }
 .tech-pill:hover { border-color: var(--glass-border-h); color: #fff; background: var(--glass-h); transform: translateY(-2px); }
 
 /* ═══════════ ABOUT PAGE LAYOUT ═══════════ */
@@ -1083,3 +1080,34 @@ body::after {
 
 /* ── MOBILE MENU ── */
 .mobile-menu { background: rgba(0,8,18,0.92); }
+
+/* ══════════════════════════════════════════
+   RESUME PAGE — TEXT SHARPNESS FIX
+   Uses solid background instead of blur
+   to match the crisp look of contact cards
+   ══════════════════════════════════════════ */
+.resume-block {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.resume-section * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.timeline-desc,
+.timeline-org,
+.timeline-period,
+.timeline-tags span,
+.cert-card span,
+.cert-card strong,
+.tech-pill,
+.timeline-title {
+  position: relative;
+  z-index: 1;
+  filter: none;
+  -webkit-filter: none;
+}

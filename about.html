@@ -4,10 +4,19 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abhijit Gaikwad — About</title>
+
+  <meta name="description" content="About Abhijit Gaikwad — AI & Python developer passionate about automation, ML integration, and full-stack web development based in Pune, India."/>
+  <meta name="author" content="Abhijit Gaikwad"/>
+  <meta property="og:title" content="About — Abhijit Gaikwad"/>
+  <meta property="og:description" content="AI developer, automation enthusiast, and lifelong learner based in Pune, India."/>
+  <meta property="og:image" content="assets/images/IMG_6426.jpg"/>
+  <meta property="og:url" content="https://io-portfolio.netlify.app/about.html"/>
+  <meta property="og:type" content="website"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
   <div id="cursor-dot"></div>
@@ -47,7 +56,7 @@
       <div class="about-grid">
         <div class="about-img-col reveal">
           <div class="about-img-wrap">
-            <img src="IMG_6426.jpg" alt="Abhijit Gaikwad" class="about-photo"/>
+            <img src="assets/images/IMG_6426.jpg" alt="Abhijit Gaikwad" class="about-photo"/>
             <div class="about-img-border"></div>
             <div class="about-exp-badge">
               <span class="exp-num">2+</span>
@@ -150,7 +159,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 Abhijit Gaikwad. All rights reserved.</span>
+        <span>© 2026 Abhijit Gaikwad. All rights reserved.</span>
         <span>Built with HTML · CSS · JS</span>
       </div>
     </div>
@@ -169,6 +178,6 @@
     const sbo=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.sic-fill').forEach(b=>b.style.width=b.dataset.w+'%');}),{threshold:0.2});
     document.querySelectorAll('.skill-cat-block').forEach(el=>sbo.observe(el));
   </script>
-  <script src="parallax.js"></script>
+  <script src="js/parallax.js"></script>
 </body>
 </html>
