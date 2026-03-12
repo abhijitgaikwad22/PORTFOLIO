@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhijit Gaikwad — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">AG<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link active">Resume</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About</a>
+    <a href="projects.html" class="mob-link">Projects</a>
+    <a href="resume.html" class="mob-link">Resume</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag reveal">My Resume</span>
+      <h1 class="page-hero-title reveal">Experience &amp; <em>Education</em></h1>
+      <p class="page-hero-sub reveal">My professional journey, education, and technical background.</p>
+      <div class="reveal" style="margin-top:1.5rem">
+        <a href="#" class="btn-primary" onclick="alert('Resume PDF download coming soon!');return false;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume PDF
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section resume-section">
+    <div class="container">
+      <div class="resume-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="resume-col">
+
+          <!-- Education -->
+          <div class="resume-block reveal">
+            <div class="resume-block-header">
+              <span class="resume-block-icon">🎓</span>
+              <h3 class="resume-block-title">Education</h3>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-period">2022 — Present</div>
+                  <h4 class="timeline-title">Bachelor of Engineering</h4>
+                  <p class="timeline-org">Computer Engineering · Pune University</p>
+                  <p class="timeline-desc">Specializing in AI/ML and software development. Active in coding clubs and hackathons.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-period">2020 — 2022</div>
+                  <h4 class="timeline-title">Higher Secondary Certificate</h4>
+                  <p class="timeline-org">Science Stream (PCM + CS)</p>
+                  <p class="timeline-desc">Developed strong fundamentals in mathematics and computer science.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="resume-block reveal">
+            <div class="resume-block-header">
+              <span class="resume-block-icon">🏅</span>
+              <h3 class="resume-block-title">Certifications</h3>
+            </div>
+            <div class="cert-list">
+              <div class="cert-card">
+                <div class="cert-icon">🐍</div>
+                <div><strong>Python for Everybody</strong><span>Coursera / University of Michigan</span></div>
+              </div>
+              <div class="cert-card">
+                <div class="cert-icon">🤖</div>
+                <div><strong>Machine Learning Basics</strong><span>Google / Kaggle</span></div>
+              </div>
+              <div class="cert-card">
+                <div class="cert-icon">🌐</div>
+                <div><strong>Web Development Bootcamp</strong><span>Udemy</span></div>
+              </div>
+              <div class="cert-card">
+                <div class="cert-icon">📊</div>
+                <div><strong>Data Analysis with Python</strong><span>freeCodeCamp</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="resume-col">
+
+          <!-- Experience -->
+          <div class="resume-block reveal">
+            <div class="resume-block-header">
+              <span class="resume-block-icon">💼</span>
+              <h3 class="resume-block-title">Experience</h3>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot accent-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-period">2024 — Present</div>
+                  <h4 class="timeline-title">Freelance AI & Automation Developer</h4>
+                  <p class="timeline-org">Self-employed · Pune, India</p>
+                  <p class="timeline-desc">Building custom AI tools, automation workflows with n8n, and Python scripts for clients. Delivered 8+ projects including web apps, data pipelines, and CV systems.</p>
+                  <div class="timeline-tags"><span>Python</span><span>n8n</span><span>Flask</span><span>AI APIs</span></div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-period">2023 — 2024</div>
+                  <h4 class="timeline-title">Python Developer Intern</h4>
+                  <p class="timeline-org">Tech Startup · Pune, India</p>
+                  <p class="timeline-desc">Developed automation scripts and data processing pipelines. Worked on backend Flask APIs and contributed to ML model integration for production systems.</p>
+                  <div class="timeline-tags"><span>Python</span><span>Flask</span><span>OpenCV</span><span>REST APIs</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="resume-block reveal">
+            <div class="resume-block-header">
+              <span class="resume-block-icon">⚡</span>
+              <h3 class="resume-block-title">Tech Stack</h3>
+            </div>
+            <div class="tech-stack-grid">
+              <div class="tech-pill">🐍 Python</div>
+              <div class="tech-pill">🌐 JavaScript</div>
+              <div class="tech-pill">🌶️ Flask</div>
+              <div class="tech-pill">🧠 OpenCV</div>
+              <div class="tech-pill">📊 Pandas</div>
+              <div class="tech-pill">🔁 n8n</div>
+              <div class="tech-pill">🗄️ SQLite</div>
+              <div class="tech-pill">🐙 Git</div>
+              <div class="tech-pill">🚀 Render</div>
+              <div class="tech-pill">📦 Netlify</div>
+              <div class="tech-pill">💬 LLM APIs</div>
+              <div class="tech-pill">🎨 HTML/CSS</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo" style="font-size:1.3rem">AG<span>.</span></a>
+        <nav class="footer-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.html">Resume</a></nav>
+        <div class="footer-socials">
+          <a href="https://github.com/abhijitgaikwad22" target="_blank" class="fsoc"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 Abhijit Gaikwad.</span><span>Built with HTML · CSS · JS</span></div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20),{passive:true});
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('hov');ring.classList.add('hov');});el.addEventListener('mouseleave',()=>{dot.classList.remove('hov');ring.classList.remove('hov');});});
+    const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  </script>
+  <script src="parallax.js"></script>
+</body>
+</html>

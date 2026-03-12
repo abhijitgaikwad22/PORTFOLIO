@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhijit Gaikwad — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">AG<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About</a>
+    <a href="projects.html" class="mob-link">Projects</a>
+    <a href="resume.html" class="mob-link">Resume</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag reveal">Who I Am</span>
+      <h1 class="page-hero-title reveal">About <em>Me</em></h1>
+      <p class="page-hero-sub reveal">AI developer, automation enthusiast, and lifelong learner based in Pune, India.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-col reveal">
+          <div class="about-img-wrap">
+            <img src="IMG_6426.jpg" alt="Abhijit Gaikwad" class="about-photo"/>
+            <div class="about-img-border"></div>
+            <div class="about-exp-badge">
+              <span class="exp-num">2+</span>
+              <span class="exp-label">Years of<br>Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content-col reveal">
+          <h2 class="about-heading">I build things that <span class="accent">think</span> and <span class="accent">automate</span></h2>
+          <p class="about-text">I'm <strong>Abhijit Gaikwad</strong>, an AI & Python developer passionate about creating intelligent systems that solve real-world problems. From automation pipelines to full-stack web apps, I love turning complex ideas into clean, working solutions.</p>
+          <p class="about-text">My journey started with a curiosity for how computers can learn and automate tasks. Today, I specialize in <strong>Python development</strong>, <strong>AI/ML integration</strong>, <strong>n8n automation</strong>, and <strong>full-stack web development</strong>.</p>
+          <div class="about-points">
+            <div class="about-point">
+              <span class="point-icon">🎯</span>
+              <div><strong>Problem-First Thinking</strong><span>I start with the problem, not the technology. Every solution I build is purpose-driven and practical.</span></div>
+            </div>
+            <div class="about-point">
+              <span class="point-icon">⚡</span>
+              <div><strong>Automation Enthusiast</strong><span>I love automating repetitive workflows using n8n, Python scripts, and AI agents to save time and eliminate errors.</span></div>
+            </div>
+            <div class="about-point">
+              <span class="point-icon">🌱</span>
+              <div><strong>Continuous Learner</strong><span>Always exploring new tools and technologies. Currently diving deep into LLM applications and agentic AI systems.</span></div>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="projects.html" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              My Projects
+            </a>
+            <a href="mailto:abhijitsgaikwad2244@gmail.com" class="btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Say Hello
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="section skills-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Professional <em>Skillset</em></h2>
+        <p class="section-sub">Technologies, frameworks, and tools I work with to build modern, intelligent applications.</p>
+      </div>
+      <div class="skills-categories">
+        <div class="skill-cat-block reveal">
+          <div class="skill-cat-title"><span class="cat-icon">🐍</span>Languages</div>
+          <div class="skill-icons-grid">
+            <div class="skill-icon-card"><span class="sic-emoji">🐍</span><span>Python</span><div class="sic-bar"><div class="sic-fill" data-w="92"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🌐</span><span>JavaScript</span><div class="sic-bar"><div class="sic-fill" data-w="78"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🎨</span><span>HTML / CSS</span><div class="sic-bar"><div class="sic-fill" data-w="88"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">📊</span><span>SQL</span><div class="sic-bar"><div class="sic-fill" data-w="75"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-cat-block reveal">
+          <div class="skill-cat-title"><span class="cat-icon">🤖</span>AI / ML</div>
+          <div class="skill-icons-grid">
+            <div class="skill-icon-card"><span class="sic-emoji">🧠</span><span>OpenCV</span><div class="sic-bar"><div class="sic-fill" data-w="82"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🔬</span><span>Scikit-learn</span><div class="sic-bar"><div class="sic-fill" data-w="74"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">📈</span><span>Pandas / NumPy</span><div class="sic-bar"><div class="sic-fill" data-w="85"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">💬</span><span>LLM APIs</span><div class="sic-bar"><div class="sic-fill" data-w="70"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-cat-block reveal">
+          <div class="skill-cat-title"><span class="cat-icon">⚙️</span>Frameworks & Tools</div>
+          <div class="skill-icons-grid">
+            <div class="skill-icon-card"><span class="sic-emoji">🌶️</span><span>Flask</span><div class="sic-bar"><div class="sic-fill" data-w="86"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🔁</span><span>n8n Automation</span><div class="sic-bar"><div class="sic-fill" data-w="80"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🐙</span><span>Git / GitHub</span><div class="sic-bar"><div class="sic-fill" data-w="83"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🐳</span><span>Docker (basics)</span><div class="sic-bar"><div class="sic-fill" data-w="55"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-cat-block reveal">
+          <div class="skill-cat-title"><span class="cat-icon">☁️</span>Deployment & Cloud</div>
+          <div class="skill-icons-grid">
+            <div class="skill-icon-card"><span class="sic-emoji">🚀</span><span>Render</span><div class="sic-bar"><div class="sic-fill" data-w="88"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">📦</span><span>Netlify</span><div class="sic-bar"><div class="sic-fill" data-w="84"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">🐱</span><span>GitHub Pages</span><div class="sic-bar"><div class="sic-fill" data-w="90"></div></div></div>
+            <div class="skill-icon-card"><span class="sic-emoji">📊</span><span>Power BI</span><div class="sic-bar"><div class="sic-fill" data-w="65"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo" style="font-size:1.3rem">AG<span>.</span></a>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.html">Resume</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://github.com/abhijitgaikwad22" target="_blank" class="fsoc"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          <a href="https://linkedin.com/in/abhijit-gaikwad-881b94268" target="_blank" class="fsoc"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Abhijit Gaikwad. All rights reserved.</span>
+        <span>Built with HTML · CSS · JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20),{passive:true});
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('hov');ring.classList.add('hov');});el.addEventListener('mouseleave',()=>{dot.classList.remove('hov');ring.classList.remove('hov');});});
+    const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+    const sbo=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.sic-fill').forEach(b=>b.style.width=b.dataset.w+'%');}),{threshold:0.2});
+    document.querySelectorAll('.skill-cat-block').forEach(el=>sbo.observe(el));
+  </script>
+  <script src="parallax.js"></script>
+</body>
+</html>
