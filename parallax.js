@@ -171,7 +171,7 @@
         const rx = dy * -10; // max 10deg
         const ry = dx *  10;
         mockup.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) scale(1.02)`;
-        mockup.style.boxShadow = `${-ry * 2}px ${rx * 2}px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25)`;
+        mockup.style.boxShadow = `${-ry * 2}px ${rx * 2}px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,180,220,.25)`;
       });
 
       card.addEventListener('mouseleave', () => {
