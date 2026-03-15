@@ -1,0 +1,388 @@
+/* ================================================================
+   iOS LIQUID GLASS OVERRIDE
+   Paste this at the very BOTTOM of your css/style.css
+   This overrides all the dark/muddy card styles with authentic
+   iOS 18 / visionOS frosted glass look
+   ================================================================ */
+
+/* ── 1. BACKGROUND — deep true dark, not muddy navy ── */
+body {
+  background-color: #060608 !important;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 20% 5%,  rgba(90, 200, 250, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 80% 15%,  rgba(191, 90, 242, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 55% at 50% 95%,  rgba(48, 209, 88,  0.05) 0%, transparent 60%) !important;
+  background-attachment: scroll !important;
+}
+
+/* ── 2. iOS GLASS RECIPE ──
+   Real iOS uses:
+   - White tint: rgba(255,255,255, 0.10–0.14)  ← lighter than you'd think
+   - Blur: 20–24px (not 28px — that's too heavy)
+   - Top border: rgba(255,255,255, 0.30) — bright specular
+   - Bottom border: rgba(0,0,0, 0.18) — subtle shadow edge
+   - Inner shadow: inset 0 1px 0 rgba(255,255,255,0.28)
+   - Drop shadow: 0 8px 32px rgba(0,0,0,0.28)
+   - NO background-color on nested children (kills the glass look)
+─────────────────────────────────────────────────────────────── */
+
+/* ── 3. NAVBAR ── */
+.navbar.scrolled {
+  background: rgba(12, 12, 18, 0.60) !important;
+  backdrop-filter: blur(24px) saturate(2.2) brightness(1.12) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(2.2) brightness(1.12) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.12),
+    0 4px 24px rgba(0,0,0,0.32) !important;
+}
+
+/* Nav pill group */
+.nav-links {
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: blur(20px) saturate(1.8) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.8) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 2px 12px rgba(0,0,0,0.20) !important;
+}
+
+/* Active nav link pill */
+.nav-link.active {
+  background: rgba(255,255,255,0.13) !important;
+  border: 1px solid rgba(255,255,255,0.24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.28),
+    0 2px 8px rgba(0,0,0,0.18) !important;
+  color: #ffffff !important;
+}
+
+/* ── 4. ALL GLASS CARDS — the core iOS look ── */
+.resume-block,
+.skill-cat-block,
+.ach-card,
+.about-point,
+.contact-form-card,
+.cinfo-card,
+.hero-stats,
+.about-exp-badge,
+.project-mockup,
+.photo-badge {
+  background: rgba(255,255,255,0.09) !important;
+  backdrop-filter: blur(20px) saturate(1.9) brightness(1.08) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.9) brightness(1.08) !important;
+  border-top:    1px solid rgba(255,255,255,0.30) !important;
+  border-left:   1px solid rgba(255,255,255,0.16) !important;
+  border-right:  1px solid rgba(255,255,255,0.10) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 8px 32px rgba(0,0,0,0.28),
+    0 2px 8px  rgba(0,0,0,0.18) !important;
+}
+
+/* Hover state — iOS brightens slightly */
+.resume-block:hover,
+.skill-cat-block:hover,
+.ach-card:hover,
+.about-point:hover,
+.cinfo-card:hover {
+  background: rgba(255,255,255,0.13) !important;
+  border-top:    1px solid rgba(255,255,255,0.40) !important;
+  border-left:   1px solid rgba(255,255,255,0.22) !important;
+  border-right:  1px solid rgba(255,255,255,0.14) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.30),
+    0 16px 48px rgba(0,0,0,0.34),
+    0 4px 12px  rgba(0,0,0,0.20) !important;
+}
+
+/* ── 5. CERT CARDS — nested inside resume-block ──
+   iOS nested glass: slightly more transparent, NO own blur
+   (double blur = muddy — this is what was broken) ── */
+.cert-card {
+  background: rgba(255,255,255,0.07) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-top:    1px solid rgba(255,255,255,0.20) !important;
+  border-left:   1px solid rgba(255,255,255,0.10) !important;
+  border-right:  1px solid rgba(255,255,255,0.06) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+.cert-card:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-top: 1px solid rgba(255,255,255,0.30) !important;
+  transform: translateX(4px) !important;
+}
+
+/* ── 6. TECH PILLS — iOS-style filled chips ── */
+.tech-pill {
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-top:    1px solid rgba(255,255,255,0.22) !important;
+  border-left:   1px solid rgba(255,255,255,0.12) !important;
+  border-right:  1px solid rgba(255,255,255,0.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16) !important;
+  color: rgba(255,255,255,0.80) !important;
+}
+.tech-pill:hover {
+  background: rgba(90,200,250,0.14) !important;
+  border-top:   1px solid rgba(90,200,250,0.45) !important;
+  border-left:  1px solid rgba(90,200,250,0.28) !important;
+  border-right: 1px solid rgba(90,200,250,0.18) !important;
+  color: #5ac8fa !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.20),
+    0 0 14px rgba(90,200,250,0.18) !important;
+}
+
+/* ── 7. TIMELINE TAGS — same no-blur treatment ── */
+.timeline-tags span {
+  background: rgba(90,200,250,0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(90,200,250,0.22) !important;
+  color: #5ac8fa !important;
+}
+
+/* ── 8. PROJECT TECH TAGS ── */
+.project-tech-row span {
+  background: rgba(255,255,255,0.07) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+}
+
+/* ── 9. SECTION TAG ── */
+.section-tag {
+  background: rgba(255,255,255,0.07) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.20) !important;
+  color: rgba(255,255,255,0.72) !important;
+}
+
+/* ── 10. BUTTONS ── */
+.btn-primary {
+  background: linear-gradient(135deg, #5ac8fa, #bf5af2) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 4px 20px rgba(90,200,250,0.30),
+    0 1px 4px rgba(0,0,0,0.25) !important;
+}
+.btn-primary:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.40),
+    0 8px 30px rgba(90,200,250,0.42),
+    0 2px 8px rgba(0,0,0,0.28) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-outline {
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top:    1px solid rgba(255,255,255,0.30) !important;
+  border-left:   1px solid rgba(255,255,255,0.16) !important;
+  border-right:  1px solid rgba(255,255,255,0.10) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.18) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22) !important;
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.13) !important;
+  border-top: 1px solid rgba(255,255,255,0.40) !important;
+}
+
+/* ── 11. HERO GREETING CHIP ── */
+.hero-greeting {
+  background: rgba(255,255,255,0.08) !important;
+  border-top:    1px solid rgba(255,255,255,0.28) !important;
+  border-left:   1px solid rgba(255,255,255,0.14) !important;
+  border-right:  1px solid rgba(255,255,255,0.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.20) !important;
+}
+
+/* ── 12. HERO STATS ── */
+.hero-stats {
+  background: rgba(255,255,255,0.08) !important;
+  border-top:    1px solid rgba(255,255,255,0.28) !important;
+  border-left:   1px solid rgba(255,255,255,0.14) !important;
+  border-right:  1px solid rgba(255,255,255,0.10) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 8px 28px rgba(0,0,0,0.26) !important;
+}
+.hstat-sep {
+  background: rgba(255,255,255,0.12) !important;
+}
+
+/* ── 13. SOCIAL ICONS ── */
+.social-icon {
+  background: rgba(255,255,255,0.07) !important;
+  border-top:    1px solid rgba(255,255,255,0.22) !important;
+  border-left:   1px solid rgba(255,255,255,0.12) !important;
+  border-right:  1px solid rgba(255,255,255,0.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+.social-icon:hover {
+  background: rgba(255,255,255,0.13) !important;
+  border-top: 1px solid rgba(255,255,255,0.35) !important;
+}
+
+/* ── 14. FOOTER SOCIAL ICONS ── */
+.fsoc {
+  background: rgba(255,255,255,0.06) !important;
+  border-top:    1px solid rgba(255,255,255,0.18) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+
+/* ── 15. MOBILE MENU ── */
+.mobile-menu {
+  background: rgba(8, 8, 14, 0.78) !important;
+  backdrop-filter: blur(32px) saturate(2.2) brightness(1.06) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(2.2) brightness(1.06) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+}
+.mob-link:hover, .mob-link.active {
+  background: rgba(255,255,255,0.09) !important;
+}
+
+/* ── 16. HAMBURGER ── */
+.hamburger {
+  background: rgba(255,255,255,0.07) !important;
+  border-top:    1px solid rgba(255,255,255,0.22) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16) !important;
+}
+
+/* ── 17. CONTACT FORM INPUTS ── */
+.fgroup input,
+.fgroup textarea {
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-top:    1px solid rgba(255,255,255,0.18) !important;
+  border-left:   1px solid rgba(255,255,255,0.10) !important;
+  border-right:  1px solid rgba(255,255,255,0.06) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.20) !important;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.16) !important;
+}
+.fgroup input:focus,
+.fgroup textarea:focus {
+  background: rgba(255,255,255,0.10) !important;
+  border-top:    1px solid rgba(90,200,250,0.50) !important;
+  border-left:   1px solid rgba(90,200,250,0.28) !important;
+  border-right:  1px solid rgba(90,200,250,0.18) !important;
+  border-bottom: 1px solid rgba(90,200,250,0.30) !important;
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.14),
+    0 0 0 3px rgba(90,200,250,0.10) !important;
+}
+
+/* ── 18. PROJECT LINK BUTTONS ── */
+.plink-ghost {
+  background: rgba(255,255,255,0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-top:    1px solid rgba(255,255,255,0.20) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+.plink-ghost:hover {
+  background: rgba(255,255,255,0.11) !important;
+  border-top: 1px solid rgba(255,255,255,0.32) !important;
+}
+
+/* ── 19. PHOTO BADGES ── */
+.photo-badge {
+  background: rgba(255,255,255,0.10) !important;
+  border-top:    1px solid rgba(255,255,255,0.32) !important;
+  border-left:   1px solid rgba(255,255,255,0.16) !important;
+  border-right:  1px solid rgba(255,255,255,0.10) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.18) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.24),
+    0 6px 20px rgba(0,0,0,0.30) !important;
+}
+
+/* ── 20. CINFO ICON BOX ── */
+.cinfo-icon {
+  background: rgba(90,200,250,0.10) !important;
+  border: 1px solid rgba(90,200,250,0.22) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ── 21. ACH ICON WRAP ── */
+.ach-icon-wrap {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
+/* ── 22. FOOTER ── */
+.footer {
+  background: rgba(6,6,10,0.65) !important;
+  backdrop-filter: blur(20px) saturate(1.8) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.8) !important;
+  border-top: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+/* ── 23. TEXT SHARPNESS — critical for glass readability ── */
+.resume-block,
+.skill-cat-block,
+.cert-card,
+.ach-card,
+.tech-pill,
+.timeline-title,
+.timeline-org,
+.timeline-desc,
+.timeline-period,
+.cert-card strong,
+.cert-card span {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  /* Prevent blur from propagating to text */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* ── 24. SKILL BARS ── */
+.sic-bar {
+  background: rgba(255,255,255,0.08) !important;
+}
+.sic-fill {
+  background: linear-gradient(90deg, #5ac8fa, #bf5af2) !important;
+  box-shadow: 0 0 8px rgba(90,200,250,0.35) !important;
+}
+
+/* ── 25. ORBIT DOTS ── */
+.od1 { background: #5ac8fa !important; box-shadow: 0 0 10px rgba(90,200,250,0.7) !important; }
+.od2 { background: #bf5af2 !important; box-shadow: 0 0 10px rgba(191,90,242,0.7) !important; }
+.od3 { background: #30d158 !important; box-shadow: 0 0 10px rgba(48,209,88,0.7)  !important; }
+
+/* ── 26. SCROLLBAR ── */
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.16) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.28) !important;
+}
+
+/* ── 27. SELECTION ── */
+::selection {
+  background: rgba(90,200,250,0.28) !important;
+}
