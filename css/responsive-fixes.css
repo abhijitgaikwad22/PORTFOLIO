@@ -1,0 +1,406 @@
+/* ============================================================
+   RESPONSIVE FIXES — Abhijit Gaikwad Portfolio
+   Add this file AFTER style.css on every page:
+   <link rel="stylesheet" href="css/responsive-fixes.css"/>
+   ============================================================ */
+
+/* ── 1. iOS Safari: fix background-attachment: fixed ── */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+/* ── 2. Global overflow guard ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ── 3. Hero section — mobile layout ── */
+@media (max-width: 960px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 1.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .hero-actions,
+  .hero-social,
+  .hero-stats,
+  .hero-greeting,
+  .hero-typed-wrap {
+    justify-content: center;
+  }
+
+  .hero-desc {
+    margin: 0 auto 2rem;
+  }
+}
+
+/* ── 4. Photo frame — prevent badge overflow on mobile ── */
+@media (max-width: 500px) {
+  .photo-frame {
+    width: 220px;
+    height: 260px;
+  }
+
+  .hero-photo {
+    width: 200px;
+    height: 240px;
+    border-radius: 20px;
+  }
+
+  .photo-badge {
+    font-size: .62rem;
+    padding: .3rem .6rem;
+    gap: .3rem;
+  }
+
+  /* Keep badges within frame boundaries */
+  .badge-python { top: 8%;  right: -5%; }
+  .badge-ai     { top: 48%; left: -5%; }
+  .badge-auto   { bottom: 8%; right: -5%; }
+
+  /* Disable 3D ring animations on very small screens for perf */
+  .photo-ring,
+  .photo-orbit { display: none; }
+}
+
+/* ── 5. Hero stats — better mobile wrap ── */
+@media (max-width: 480px) {
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: .8rem 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .hstat-sep { display: none; }
+
+  .hstat {
+    min-width: 80px;
+  }
+}
+
+/* ── 6. About grid — proper stacking ── */
+@media (max-width: 820px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-img-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-img-wrap {
+    /* prevent exp badge from clipping outside container */
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-photo {
+    width: 260px;
+    height: 295px;
+  }
+
+  .about-img-wrap {
+    width: 260px;
+  }
+
+  .about-exp-badge {
+    right: -8px;
+  }
+}
+
+/* ── 7. Project items — fix rtl reverse on mobile ── */
+@media (max-width: 820px) {
+  .project-item,
+  .project-item.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr !important;
+  }
+
+  .project-item.reverse > * {
+    direction: ltr !important;
+  }
+
+  /* mockup always on top */
+  .project-img-col {
+    order: 0;
+  }
+
+  .project-content-col {
+    order: 1;
+  }
+}
+
+/* ── 8. Project mockup min-height ── */
+.pm-body {
+  min-height: 160px;
+}
+
+/* ── 9. Skills grid — single col on small phones ── */
+@media (max-width: 480px) {
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-cat-block {
+    padding: 1.4rem;
+  }
+}
+
+/* ── 10. Resume grid ── */
+@media (max-width: 820px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 11. Contact grid ── */
+@media (max-width: 780px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 1.4rem;
+  }
+}
+
+/* ── 12. Navbar hamburger — increase tap target ── */
+.hamburger {
+  padding: 8px;
+  margin: -8px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── 13. Mobile menu links — bigger tap areas ── */
+.mob-link {
+  padding: 1rem clamp(1.2rem, 5vw, 2.5rem);
+  font-size: 1rem;
+  display: block;
+}
+
+/* ── 14. Footer — full mobile stack ── */
+@media (max-width: 640px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: .4rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: .8rem 1.2rem;
+  }
+}
+
+/* ── 15. Page hero — padding on mobile ── */
+@media (max-width: 600px) {
+  .page-hero {
+    padding: calc(var(--nav-h) + 3rem) 0 2.5rem;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+}
+
+/* ── 16. Buttons — full width on very small screens ── */
+@media (max-width: 380px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-actions {
+    flex-direction: column;
+  }
+}
+
+/* ── 17. Section padding — tighter on mobile ── */
+@media (max-width: 600px) {
+  .section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+  }
+}
+
+/* ── 18. GitHub card — mobile layout ── */
+@media (max-width: 700px) {
+  .github-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .github-logo {
+    margin: 0 auto;
+  }
+
+  .github-tags {
+    justify-content: center;
+  }
+
+  .contrib-grid {
+    justify-content: center;
+  }
+}
+
+/* ── 19. Projects section label on mobile ── */
+@media (max-width: 480px) {
+  .projects-section-label {
+    gap: .6rem;
+  }
+}
+
+/* ── 20. cinfo-card value — prevent overflow ── */
+.cinfo-val {
+  word-break: break-all;
+  font-size: .82rem;
+}
+
+@media (max-width: 380px) {
+  .cinfo-val {
+    font-size: .75rem;
+  }
+}
+
+/* ── 21. Tech pills — better wrap ── */
+.tech-stack-grid {
+  gap: .45rem;
+}
+
+/* ── 22. Scroll indicator — hide on landscape mobile ── */
+@media (max-height: 500px) {
+  .hero-scroll {
+    display: none;
+  }
+}
+
+/* ── 23. Tablet: nav links still visible at 821–960px ── */
+@media (min-width: 821px) and (max-width: 960px) {
+  .nav-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ── 24. Ensure images never overflow ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* hero and about photos are intentionally sized — keep them */
+.hero-photo,
+.about-photo {
+  max-width: none;
+}
+
+/* ── 25. Prevent parallax transforms breaking mobile layout ── */
+@media (max-width: 820px) {
+  /* Disable scroll-driven transforms on mobile that cause layout jank */
+  .hero-left,
+  .hero-right,
+  .hero-bg-grid,
+  .skill-cat-block,
+  .ach-card,
+  .project-mockup,
+  .resume-block,
+  .section-tag {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: border-color .3s, background .3s, box-shadow .3s !important;
+  }
+
+  /* Re-enable hover effects */
+  .skill-cat-block:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  .project-item:hover .project-mockup {
+    transform: translateY(-5px) !important;
+  }
+
+  .ach-card:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  /* Still allow reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── 26. Fix timeline on mobile ── */
+@media (max-width: 480px) {
+  .timeline-item {
+    gap: .7rem;
+  }
+
+  .timeline-tags {
+    gap: .3rem;
+  }
+}
+
+/* ── 27. Section tag opacity — reset from parallax.js ── */
+.section-tag {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── 28. About points — single column on mobile ── */
+@media (max-width: 420px) {
+  .about-point {
+    padding: .75rem .9rem;
+  }
+
+  .about-point > div > span {
+    font-size: .78rem;
+  }
+}

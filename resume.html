@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive-fixes.css"/>
 </head>
 <body>
   <div id="cursor-dot"></div>
@@ -202,6 +203,7 @@
     const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.08});
     document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
   </script>
+  <script src="js/script.js"></script>
   <script src="js/parallax.js"></script>
 </body>
 </html>
