@@ -386,3 +386,47 @@ body {
 ::selection {
   background: rgba(90,200,250,0.28) !important;
 }
+
+/* ── FIX 1: Remove scanline stripes ── */
+body::after {
+  display: none !important;
+}
+
+body::before {
+  display: none !important;
+}
+
+/* ── FIX 2: Hero background - clean dark ── */
+body {
+  background-image:
+    radial-gradient(ellipse 70% 50% at 20% 5%,  rgba(90,200,250,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 80% 15%, rgba(191,90,242,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 55% at 50% 95%, rgba(48,209,88,0.05)  0%, transparent 60%) !important;
+  background-color: #060608 !important;
+}
+
+/* ── FIX 3: Photo blur - never blur the actual photo ── */
+.hero-photo,
+.about-photo {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* ── FIX 4: Photo frame parent - stop blur leaking into photo ── */
+.photo-frame,
+.about-img-wrap,
+.about-img-col {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ── FIX 5: Hero section - no blur on container ── */
+.hero,
+.hero-container,
+.hero-left,
+.hero-right {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
