@@ -1,0 +1,110 @@
+/* ── projects-extra.css — liquid glass additions for projects.html ── */
+
+.projects-section-label {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 3rem 0 2rem;
+}
+.psl-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.15), transparent);
+}
+.psl-badge {
+  font-family: var(--ff-mono); font-size: .66rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .28rem .82rem; border-radius: 100px;
+  border: 1px solid; white-space: nowrap;
+  backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
+}
+.psl-badge.completed {
+  color: rgba(48,209,88,.9); border-color: rgba(48,209,88,.35);
+  background: rgba(48,209,88,.07);
+}
+.psl-badge.ongoing {
+  color: rgba(191,90,242,.9); border-color: rgba(191,90,242,.35);
+  background: rgba(191,90,242,.07);
+}
+
+.ongoing-badge {
+  display: inline-flex; align-items: center; gap: .38rem;
+  font-family: var(--ff-mono); font-size: .62rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .22rem .68rem; border-radius: 100px;
+  color: rgba(191,90,242,.9); border: 1px solid rgba(191,90,242,.35);
+  background: rgba(191,90,242,.07); margin-bottom: .55rem;
+  backdrop-filter: blur(12px);
+}
+.ongoing-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #bf5af2;
+  box-shadow: 0 0 6px rgba(191,90,242,.8);
+  animation: livepulse 2s ease infinite;
+}
+
+/* GitHub section */
+.github-section { padding: clamp(4rem,7vw,6rem) 0; }
+.github-card {
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(28px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem,5vw,3.5rem);
+  display: grid; grid-template-columns: auto 1fr;
+  gap: clamp(2rem,4vw,4rem); align-items: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 40px rgba(0,0,0,.28);
+  transition: border-color .3s, box-shadow .3s;
+  position: relative; overflow: hidden;
+}
+.github-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+}
+.github-card:hover {
+  border-color: rgba(255,255,255,.26);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 20px 56px rgba(0,0,0,.35);
+}
+@media (max-width: 700px) {
+  .github-card { grid-template-columns: 1fr; text-align: center; }
+  .github-logo  { margin: 0 auto; }
+  .github-tags, .contrib-grid { justify-content: center; }
+}
+
+.github-logo {
+  width: 86px; height: 86px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.20);
+}
+.github-logo svg { width: 42px; height: 42px; color: rgba(255,255,255,.85); }
+.github-title { font-size: clamp(1.35rem,3.5vw,2rem); font-weight: 800; margin-bottom: .45rem; color: var(--text); }
+.github-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.github-desc { font-size: .93rem; color: var(--text-2); line-height: 1.75; margin-bottom: 1.2rem; max-width: 560px; }
+.github-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.4rem; }
+.github-tag {
+  font-family: var(--ff-mono); font-size: .66rem;
+  padding: .26rem .72rem; border-radius: 100px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+  color: var(--text-2); box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+.github-btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: .88rem; font-weight: 700;
+  padding: .72rem 1.7rem; border-radius: 100px;
+  background: var(--grad); color: #fff;
+  box-shadow: 0 0 22px rgba(90,200,250,.22), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .22s, box-shadow .22s;
+}
+.github-btn:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(90,200,250,.38), inset 0 1px 0 rgba(255,255,255,.3); }
+
+/* Contribution grid */
+.contrib-grid { margin-top: 1.4rem; display: flex; gap: 3px; flex-wrap: wrap; opacity: .55; }
+.contrib-week { display: flex; flex-direction: column; gap: 3px; }
+.contrib-day { width: 10px; height: 10px; border-radius: 2px; background: rgba(255,255,255,.06); }
+.contrib-day.l1 { background: rgba(90,200,250,.20); }
+.contrib-day.l2 { background: rgba(90,200,250,.40); }
+.contrib-day.l3 { background: rgba(90,200,250,.65); }
+.contrib-day.l4 { background: rgba(90,200,250,.88); }
