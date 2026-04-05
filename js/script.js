@@ -6,28 +6,23 @@
 
 'use strict';
 
-/* ── CURSOR ── */
+/* ── GSAP CURSOR ── */
 (function () {
   const dot  = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   if (!dot || !ring) return;
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
-  let mx = -200, my = -200, rx = -200, ry = -200;
+  // Since we use transform translate(-50%, -50%) in CSS, GSAP sets x/y relative to it
+  let xToDot = gsap.quickTo(dot, "left", {duration: 0.1, ease: "power3"}),
+      yToDot = gsap.quickTo(dot, "top", {duration: 0.1, ease: "power3"}),
+      xToRing = gsap.quickTo(ring, "left", {duration: 0.35, ease: "power3"}),
+      yToRing = gsap.quickTo(ring, "top", {duration: 0.35, ease: "power3"});
 
   document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
+    xToDot(e.clientX); yToDot(e.clientY);
+    xToRing(e.clientX); yToRing(e.clientY);
   });
-
-  (function trackRing() {
-    rx += (mx - rx) * 0.11;
-    ry += (my - ry) * 0.11;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(trackRing);
-  })();
 
   const hovSel = 'a,button,.project-item,.skill-cat-block,.ach-card,.cinfo-card,input,textarea,.photo-frame';
   document.addEventListener('mouseover', e => {
@@ -36,8 +31,8 @@
   document.addEventListener('mouseout', e => {
     if (e.target.closest(hovSel)) { dot.classList.remove('hov'); ring.classList.remove('hov'); }
   });
-  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+  document.addEventListener('mouseleave', () => { gsap.to([dot, ring], {opacity: 0, duration: 0.2}); });
+  document.addEventListener('mouseenter', () => { gsap.to([dot, ring], {opacity: 1, duration: 0.2}); });
 })();
 
 /* ── FLOATING PARTICLES ── */
@@ -142,22 +137,31 @@
   setTimeout(type, 800);
 })();
 
-/* ── SCROLL REVEAL ── */
+/* ── GSAP SCROLL REVEAL ── */
 (function () {
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const delay = parseInt(e.target.dataset.delay || 0);
-        setTimeout(() => e.target.classList.add('visible'), delay);
-        io.unobserve(e.target);
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+  
+  const els = gsap.utils.toArray('.reveal');
+  
+  els.forEach(el => {
+    const delay = parseInt(el.dataset.delay || 0) / 1000;
+    gsap.fromTo(el, 
+      { autoAlpha: 0, y: 35 }, 
+      {
+        autoAlpha: 1, 
+        y: 0, 
+        duration: 0.8, 
+        delay: delay,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
       }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -55px 0px' });
-
-  els.forEach(el => io.observe(el));
+    );
+  });
 })();
 
 /* ── STAT COUNTERS ── */

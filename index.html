@@ -280,92 +280,9 @@
       </div>
     </footer>
 
-    <script>
-      // Navbar scroll
-      window.addEventListener('scroll', () =>
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20),
-        { passive: true }
-      );
-
-      // Mobile menu
-      function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('open');
-      }
-
-      // Custom cursor
-      const dot = document.getElementById('cursor-dot');
-      const ring = document.getElementById('cursor-ring');
-      let mx = 0, my = 0, rx = 0, ry = 0;
-      document.addEventListener('mousemove', (e) => {
-        mx = e.clientX; my = e.clientY;
-        dot.style.left = mx + 'px';
-        dot.style.top  = my + 'px';
-      });
-      (function a() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        ring.style.left = rx + 'px';
-        ring.style.top  = ry + 'px';
-        requestAnimationFrame(a);
-      })();
-      document.querySelectorAll('a,button').forEach((el) => {
-        el.addEventListener('mouseenter', () => { dot.classList.add('hov'); ring.classList.add('hov'); });
-        el.addEventListener('mouseleave', () => { dot.classList.remove('hov'); ring.classList.remove('hov'); });
-      });
-
-      // Scroll reveal
-      const ro = new IntersectionObserver(
-        (e) => e.forEach((x) => { if (x.isIntersecting) x.target.classList.add('visible'); }),
-        { threshold: 0.08 }
-      );
-      document.querySelectorAll('.reveal').forEach((el) => ro.observe(el));
-
-      // Floating particles
-      const pw = document.getElementById('particles');
-      for (let i = 0; i < 18; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        const s = Math.random() * 4 + 2;
-        p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:-${Math.random()*15}s`;
-        pw.appendChild(p);
-      }
-
-      // Typed text
-      const words = ['Python Developer','AI Engineer','Automation Expert','Full-Stack Builder','Data Analyst'];
-      let wi = 0, ci = 0, del = false;
-      function type() {
-        const w = words[wi], el = document.getElementById('typedText');
-        if (!del) {
-          el.textContent = w.slice(0, ++ci);
-          if (ci === w.length) { del = true; setTimeout(type, 1800); return; }
-        } else {
-          el.textContent = w.slice(0, --ci);
-          if (ci === 0) { del = false; wi = (wi + 1) % words.length; }
-        }
-        setTimeout(type, del ? 60 : 110);
-      }
-      setTimeout(type, 600);
-
-      // Contact form
-      function sendMsg() {
-        const n = document.getElementById('cfName').value,
-              e = document.getElementById('cfEmail').value,
-              s = document.getElementById('cfSubject').value,
-              msg = document.getElementById('cfMsg').value;
-        if (n && e && s && msg) {
-          document.getElementById('contactForm').style.display = 'none';
-          document.getElementById('formDone').style.display = 'flex';
-          setTimeout(() => {
-            document.getElementById('contactForm').style.display = 'block';
-            document.getElementById('formDone').style.display = 'none';
-            document.getElementById('cfName').value = '';
-            document.getElementById('cfEmail').value = '';
-            document.getElementById('cfSubject').value = '';
-            document.getElementById('cfMsg').value = '';
-          }, 3000);
-        }
-      }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/parallax.js"></script>
   </body>
 </html>

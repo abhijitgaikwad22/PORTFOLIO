@@ -470,29 +470,24 @@
   </footer>
 
   <script>
-    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20),{passive:true});
-    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-    const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-    (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('hov');ring.classList.add('hov');});el.addEventListener('mouseleave',()=>{dot.classList.remove('hov');ring.classList.remove('hov');});});
-    const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.06});
-    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
     // Generate contribution grid
     const grid=document.getElementById('contribGrid');
-    const lvls=['','l1','l2','l3','l4'];
-    for(let w=0;w<26;w++){
-      const wk=document.createElement('div');wk.className='contrib-week';
-      for(let d=0;d<7;d++){
-        const dy=document.createElement('div');
-        const r=Math.random();
-        dy.className='contrib-day '+(r>.7?lvls[4]:r>.5?lvls[3]:r>.35?lvls[2]:r>.2?lvls[1]:'');
-        wk.appendChild(dy);
+    if (grid) {
+      const lvls=['','l1','l2','l3','l4'];
+      for(let w=0;w<26;w++){
+        const wk=document.createElement('div');wk.className='contrib-week';
+        for(let d=0;d<7;d++){
+          const dy=document.createElement('div');
+          const r=Math.random();
+          dy.className='contrib-day '+(r>.7?lvls[4]:r>.5?lvls[3]:r>.35?lvls[2]:r>.2?lvls[1]:'');
+          wk.appendChild(dy);
+        }
+        grid.appendChild(wk);
       }
-      grid.appendChild(wk);
     }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/parallax.js"></script>
 </body>
